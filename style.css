@@ -35,16 +35,26 @@ body{
 }
 .tallys{
     font-size: 16px;
-    margin: 0 auto;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 0%;
+    margin-bottom: 4%;
     font-weight: 500;
-    text-align: center;
     display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
+    flex-direction: row;
+    padding: 1px 0;
+    text-align: center;
+}
+.adding{
+    font-size: 16px;
+    font-weight: 500;
+    display: inline;
+    padding: 1px 0;
+    text-align: center;
 }
 span {
     width: 120px;
-    height: 50px;
+    height: 20px;
     background: white;
   }
 button{
@@ -58,10 +68,15 @@ button{
     border-radius: 5px;
     cursor: pointer;
     display: inline-block;
-    margin-left: 3%;
-    margin-right: 3%;
-    margin-top: 8%;
+    margin-left: 4%;
+    margin-right: 4%;
+    margin-top: 0%;
 
+}
+.power-ups {
+    text-align: center;
+    margin-top: 5%;
+    font-family: "Poppins",sans-serif;
 }
 .shake{
     animation: shake 0.5s infinite;
@@ -76,4 +91,32 @@ button{
     100%{
         transform: rotate(8deg);
     }
+}
+#leftRolledNum {
+    display: inline;
+    margin-left: 40px;
+    margin-top: 20px;
+    width: 150px;
+    height: 80px;
+    float: left;
+    opacity: 0;
+    transition: 1s;
+}
+#leftRolledNum.fade-in {
+    opacity: 1;
+    transition: 1s;
+}
+#rightRolledNum {
+    display: inline;
+    margin-left: 25px;
+    margin-top: 20px;
+    width: 150px;
+    height: 80px;
+    float: left;
+    opacity: 0;
+    transition: 1s;
+}
+#rightRolledNum.fade-in {
+    opacity: 1;
+    transition: 1s;
 }

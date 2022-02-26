@@ -6,15 +6,42 @@ let images = ["./src_images/dice-01.svg",
 "./src_images/dice-05.svg",
 "./src_images/dice-06.svg"];
 
-// Dice Variable For All Images
+// ID's For Query
 let leftDie = document.querySelectorAll("#die-1");
 let rightDie = document.querySelectorAll("#die-2");
+let leftRolled = document.getElementById("leftRolledNum");
+let rightRolled = document.getElementById("rightRolledNum");
+var checkBox = document.getElementById("multiplyClicked");
+
+// Global Variables For Left + Right Total Amounts
+let leftValue = 0;
+let rightValue = 0;
+
+// Check For 10x Mode
+let multiplier = false;
 
 
 /*
-*   Left Die Roll Function 
+*   Multiply Function - Applies A 10x Multiplier To The Added Value.
 *
+*   @return     Boolean according to checkbox.
+*   @see        Checkbox for user input.
+*/
+function multiply()
+{
+    if (checkBox.checked == true) {
+        multiplier = true;
+    } else {
+        multiplier = false;
+    }
+}
+
+
+/*
+*   Left Die Roll Function - Generates Random (1-6) Then Adds Onto Left Total.
 *
+*   @return     Updated texts/variables for left side + what was added.
+*   @see        Updated total, what was added.
 */
 function dieRoll_One() 
 {
@@ -23,7 +50,7 @@ function dieRoll_One()
         die.classList.add("shake");
     });
 
-    // Remove Shake To Right Die + Calc. Amount
+    // Remove Shake To Left Die + Calc. Amount
     setTimeout(function(){
         leftDie.forEach(function(die){
             die.classList.remove("shake");
@@ -33,9 +60,33 @@ function dieRoll_One()
         let dieOneValue = Math.floor(Math.random()*6);
         console.log(dieOneValue);
 
-        // Update Die Image + Total
+        // Update Die Image
         document.querySelector("#die-1").setAttribute("src", images[dieOneValue]);
-        document.querySelector("#leftTotal").innerHTML = "Total: " + (dieOneValue +1);
+
+        // Check Multiplier + Update Total
+        if (multiplier) {
+            dieOneValue = (dieOneValue + 1) * 10;
+        } else {
+            dieOneValue += 1;
+        }
+
+        leftValue += dieOneValue;
+        document.querySelector("#leftTotal").innerHTML = "Total: " + leftValue;
+
+        leftRolled.classList.add("fade-in");
+
+        // Display Output According To Multiplier
+        if (multiplier) {
+            document.querySelector("#leftRolledNum").innerHTML = 
+                "10x Multiplier! " +
+                "Added " + dieOneValue + "!";
+        } else {
+            document.querySelector("#leftRolledNum").innerHTML = 
+                "Added " + dieOneValue + "!";
+        }
+        setTimeout(function () {
+            leftRolled.classList.remove("fade-in");
+        }, 1500);
     },
     1000
     );
@@ -44,9 +95,10 @@ dieRoll_One();
 
 
 /*
-*   Right Die Roll Function
+*   Right Die Roll Function - Generates Random (1-6) Then Adds Onto Right Total.
 *
-*
+*   @return     Updated texts/variables for right side + what was added.
+*   @see        Updated total, what was added.
 */
 function dieRoll_Two() 
 {
@@ -67,7 +119,31 @@ function dieRoll_Two()
 
         // Update Die Image + Total
         document.querySelector("#die-2").setAttribute("src", images[dieTwoValue]);
-        document.querySelector("#rightTotal").innerHTML = "Total: " + (dieTwoValue + 1);
+
+        // Check Multiplier + Update Total
+        if (multiplier) {
+            dieTwoValue = (dieTwoValue + 1) * 10;
+        } else {
+            dieTwoValue += 1;
+        }
+
+        rightValue += dieTwoValue;
+        document.querySelector("#rightTotal").innerHTML = "Total: " + rightValue;
+
+        rightRolled.classList.add("fade-in");
+
+        // Display Output According To Multiplier
+        if (multiplier) {
+            document.querySelector("#rightRolledNum").innerHTML = 
+                "10x Multiplier! " +
+                "Added " + dieTwoValue + "!";
+        } else {
+            document.querySelector("#rightRolledNum").innerHTML = 
+                "Added " + dieTwoValue + "!";
+        }
+        setTimeout(function () {
+            rightRolled.classList.remove("fade-in");
+        }, 1500);
     },
     1000
     );
