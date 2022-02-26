@@ -7,27 +7,35 @@ let images = ["./src_images/dice-01.svg",
 "./src_images/dice-06.svg"];
 
 // Dice Variable For All Images
-let dice = document.querySelectorAll("img");
+let leftDie = document.querySelectorAll("#die-1");
+let rightDie = document.querySelectorAll("#die-2");
+
 
 /*
 *   Left Die Roll Function 
 *
 *
 */
-function dieRoll_One() {
-    dice.forEach(function(die){
+function dieRoll_One() 
+{
+    // Add Shake To Left Die
+    leftDie.forEach(function(die){
         die.classList.add("shake");
     });
+
+    // Remove Shake To Right Die + Calc. Amount
     setTimeout(function(){
-        dice.forEach(function(die){
+        leftDie.forEach(function(die){
             die.classList.remove("shake");
         });
+        
+        // Generate Random Die Roll (1-6)
         let dieOneValue = Math.floor(Math.random()*6);
-        let dieTwoValue = Math.floor(Math.random()*6);
-        console.log(dieOneValue,dieTwoValue);
+        console.log(dieOneValue);
+
+        // Update Die Image + Total
         document.querySelector("#die-1").setAttribute("src", images[dieOneValue]);
-        document.querySelector("#die-2").setAttribute("src", images[dieTwoValue]);
-        document.querySelector("#total").innerHTML = "Your roll is " + ( (dieOneValue +1) + (dieTwoValue + 1) );
+        document.querySelector("#leftTotal").innerHTML = "Total: " + (dieOneValue +1);
     },
     1000
     );
@@ -40,7 +48,28 @@ dieRoll_One();
 *
 *
 */
-function dieRoll_Two() {
+function dieRoll_Two() 
+{
+    // Add Shake To Right Die
+    rightDie.forEach(function(die){
+        die.classList.add("shake");
+    });
 
+    // Remove Shake To Right Die + Calc. Amount
+    setTimeout(function(){
+        rightDie.forEach(function(die){
+            die.classList.remove("shake");
+        });
+
+        // Generate Random Die Roll (1-6)
+        let dieTwoValue = Math.floor(Math.random()*6);
+        console.log(dieTwoValue);
+
+        // Update Die Image + Total
+        document.querySelector("#die-2").setAttribute("src", images[dieTwoValue]);
+        document.querySelector("#rightTotal").innerHTML = "Total: " + (dieTwoValue + 1);
+    },
+    1000
+    );
 }
 dieRoll_Two();
