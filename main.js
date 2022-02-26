@@ -10,7 +10,7 @@ let images = ["./src_images/dice-01.svg",
 let dice = document.querySelectorAll("img");
 
 /*
-*   Roll Function 
+*   Left Die Roll Function 
 *
 *
 */
@@ -36,7 +36,7 @@ dieRoll_One();
 
 
 /*
-*
+*   Right Die Roll Function
 *
 *
 */

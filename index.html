@@ -10,16 +10,22 @@
 </head>
 
 <body>
+    <!-- Dice Images -->
     <div class="container">
+        <p id="total"></p>
         <div class="dice-wrapper">
             <img  id="die-1">
             <img  id="die-2">
         </div>
-        <p id="total"></p>
-        <button onclick="dieRoll_One()">ROLL THE DICE</button>
-        <button onclick="dieRoll_Two()">Test</button>
+
+        <!-- Button Container -->
+        <div class="buttons">
+            <button onclick="dieRoll_One()">Roll Left Die!</button>
+            <button onclick="dieRoll_Two()">Roll Right Die!</button>
+        </div>
     </div>
-    <!--Script-->
+
+    <!-- Import JS Script -->
     <script src="main.js"></script>
 </body>
 </html>
