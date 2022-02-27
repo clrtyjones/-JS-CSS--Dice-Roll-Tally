@@ -10,7 +10,7 @@ This fun side project example demonstrates the simulation of a Dice Roll between
 
 ## 🔍 - Examples
 
-&emsp; &emsp; &emsp; &emsp; ***Dice Roll Example:*** &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ***10x Power Up Example:***
+&emsp; &emsp; &emsp; &emsp; &emsp; ***Dice Roll Example:*** &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; &emsp; ***10x Power Up Example:***
 
 <p float="left" align="middle">
 <img src="https://user-images.githubusercontent.com/66184564/155868349-e99914a3-172e-4396-aaed-a69ae9766ea8.gif" width="400">
