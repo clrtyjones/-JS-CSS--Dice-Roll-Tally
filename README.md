@@ -12,7 +12,7 @@ This fun side project example demonstrates the simulation of a Dice Roll between
 
 <p float="left" align="middle">
 <img src="https://user-images.githubusercontent.com/66184564/155868349-e99914a3-172e-4396-aaed-a69ae9766ea8.gif" width="400">
-  &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+  &nbsp;
 <img src="https://user-images.githubusercontent.com/66184564/155868351-5695491e-fa7f-4a38-805f-c0155af3e55a.gif" width="400" height="408">
 </p>
 
